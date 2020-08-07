@@ -8,13 +8,15 @@
 int main(int argc, char* argv[]) {
     using namespace std;
 
-    std::cout << "argc : " << argc << std::endl;
-    std::cout << "argv : " << std::endl;
-    for (int i = 0; i < argc; i++) {
-        std::cout << argv[i] << std::endl;
+    vector<string> args(argv, argv + argc);
+
+    cout << "argc : " << args.size() << endl;
+    cout << "argv : " << endl;
+    for (auto arg : args) {
+        cout << arg << endl;
     }
 
-    std::cin.get();
+    cin.get();
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
