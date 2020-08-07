@@ -1,11 +1,20 @@
 ﻿// CommandLineParse.cpp : 이 파일에는 'main' 함수가 포함됩니다. 거기서 프로그램 실행이 시작되고 종료됩니다.
 //
 
+#include <vector>
+#include <string>
 #include <iostream>
 
-int main()
-{
-    std::cout << "Hello World!\n";
+int main(int argc, char* argv[]) {
+    using namespace std;
+
+    std::cout << "argc : " << argc << std::endl;
+    std::cout << "argv : " << std::endl;
+    for (int i = 0; i < argc; i++) {
+        std::cout << argv[i] << std::endl;
+    }
+
+    std::cin.get();
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
