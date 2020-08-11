@@ -5,18 +5,20 @@
 #include <string>
 #include <iostream>
 
-int main(int argc, char* argv[]) {
+int wmain(int argc, wchar_t* argv[]) {
     using namespace std;
+    
+    wcout.imbue(std::locale(""));   // 이걸 해줘야 한글 제대로 출력 됨
+    
+    vector<wstring> args(argv, argv + argc);
 
-    vector<string> args(argv, argv + argc);
-
-    cout << "argc : " << args.size() << endl;
-    cout << "argv : " << endl;
+    wcout << L"argc : " << args.size() << endl;
+    wcout << L"argv : " << endl;
     for (auto arg : args) {
-        cout << arg << endl;
+        wcout << arg << endl;
     }
 
-    cin.get();
+    wcin.get();
 }
 
 // 프로그램 실행: <Ctrl+F5> 또는 [디버그] > [디버깅하지 않고 시작] 메뉴
